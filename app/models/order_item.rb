@@ -1,6 +1,6 @@
 class OrderItem < ActiveRecord::Base
   
-  attr_accessible :quantity, :total_price, :unit_price
+  attr_accessible :quantity, :total_price, :unit_price, :product_id
   
   belongs_to :product
   belongs_to :order
