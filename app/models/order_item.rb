@@ -1,4 +1,7 @@
 class OrderItem < ActiveRecord::Base
+  
+  attr_accessible :quantity, :total_price, :unit_price
+  
   belongs_to :product
   belongs_to :order
 
