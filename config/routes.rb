@@ -1,6 +1,6 @@
 ShoppingSystem::Application.routes.draw do
 
-  resources :products, only: [:index]
+  resources :products, only: [:index, :create, :update, :destroy]
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
   root to: "products#index"
@@ -10,6 +10,12 @@ ShoppingSystem::Application.routes.draw do
   get "order_items/update"
 
   get "order_items/destroy"
+  
+   get "products/create"
+
+  get "products/update"
+
+  get "products/destroy"
 
   get "carts/show"
 
