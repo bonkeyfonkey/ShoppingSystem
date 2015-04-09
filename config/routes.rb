@@ -1,6 +1,16 @@
 ShoppingSystem::Application.routes.draw do
 
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
+  resources :users
+
+
   resources :products
+  resources :sessions
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
   root to: "products#index"
@@ -24,6 +34,9 @@ ShoppingSystem::Application.routes.draw do
   get "products/index"
   
   get "products/new"
+  
+  match 'signin', :to => 'sessions#new'
+  match 'signout', :to => 'sessions#destroy'
   
   
 
