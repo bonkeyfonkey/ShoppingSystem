@@ -32,6 +32,24 @@ class ProductsController < ApplicationController
       format.json { render json: @product }
     end
   end
+
+ def edit
+    @product = Product.find(params[:id])
+  end
+  
+  def update
+    @product = Product.find(params[:id])
+
+    respond_to do |format|
+      if @product.update_attributes(params[:product])
+        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
+  end
   
   def search
   @products = Product.search params[:q]

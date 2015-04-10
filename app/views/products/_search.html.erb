@@ -1,5 +1,25 @@
 <%= form_tag("/search", :method => "get") do %>
-<%= label_tag(:q, "Search for:") %>
+<%= label_tag(:q, "Search product name:") %>
 <%= text_field_tag(:q, params[:q], :id=> 'q_field') %>
 <%= submit_tag("Search")%>
+
+<%= form_tag("/search", :method => "get") do %>
+<%= label_tag(:q, "Search by category:") %>
+<%= text_field_tag(:q, params[:q], :id=> 'q_field') %>
+<%= submit_tag("Search")%>
+</br>
+<%= form_tag("/search", :method => "get") do %>
+<%= label_tag(:q, "Search by price:") %>
+<%= text_field_tag(:q, params[:q], :id=> 'q_field') %>
+<%= submit_tag("Search")%>
+
+<%= form_tag("/search", :method => "get") do %>
+<%= label_tag(:q, "Search by price:") %>
+<%= text_field_tag(:q, params[:q], :id=> 'q_field') %>
+<%= submit_tag("Search")%>
+
+<% end %>
+<% end %>
+
+<% end %>
 <% end %>
