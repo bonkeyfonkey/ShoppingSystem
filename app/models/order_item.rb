@@ -20,7 +20,12 @@ class OrderItem < ActiveRecord::Base
   def total_price
     unit_price * quantity
   end
-
+  
+  def stock_level
+  
+   product.stock = product.stock - self[:quantity]
+   
+   end
 private
   def product_present
     if product.nil?

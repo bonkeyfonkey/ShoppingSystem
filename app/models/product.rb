@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  attr_accessible :active, :category, :description, :manufacturer, :name, :price, :title
+  attr_accessible :active, :category, :description, :manufacturer, :name, :price, :title, :stock
   
    has_many :order_items
 
@@ -24,4 +24,5 @@ class Product < ActiveRecord::Base
    search_condition = search + "%"
    find(:all, :conditions => ['manufacturer LIKE ?', search_condition])
    end
+   
 end
