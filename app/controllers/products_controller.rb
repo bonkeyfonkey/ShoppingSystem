@@ -13,10 +13,14 @@ class ProductsController < ApplicationController
     
   end
   
+  
+  
    # GET /products/1
   # GET /products/1.json
    def show
     @product = Product.find(params[:id])
+	@comments = @product.comments.all
+    @comment = @product.comments.build
 	
 	respond_to do |format|
       format.html # show.html.erb
