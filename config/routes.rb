@@ -1,5 +1,8 @@
 ShoppingSystem::Application.routes.draw do
 
+  resources :comments
+
+
   get "sessions/new"
 
   get "sessions/create"

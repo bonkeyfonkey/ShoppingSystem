@@ -1,7 +1,11 @@
 class Product < ActiveRecord::Base
+
+
   attr_accessible :active, :category, :description, :manufacturer, :name, :price, :title, :stock
   
    has_many :order_items
+   
+   has_many :comments
 
    default_scope { where(active: true) }
    
