@@ -4,7 +4,7 @@
     <div class="col-xs-8">
       <h4><%= product.name %></small></h4>
     </div>
-    <div class="col-xs-4">
+    <div class="col-m-4">
       
       <%= form_for order_item, remote: true do |f| %>
       <h4 class="text-right">Unit Price: <span style="color: orange"><%= number_to_currency product.price %></span></h4>
