@@ -1,5 +1,7 @@
 ShoppingSystem::Application.routes.draw do
 
+  get "pages/adminhome"
+
   resources :comments
 
 
@@ -16,7 +18,7 @@ ShoppingSystem::Application.routes.draw do
   resources :sessions
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
-  root to: "products#index"
+ 
   
   get "order_items/create"
 
@@ -37,6 +39,8 @@ ShoppingSystem::Application.routes.draw do
   get "products/index"
   
   get "products/new"
+  
+
   
   match 'signin', :to => 'sessions#new'
   match 'signout', :to => 'sessions#destroy'
@@ -93,7 +97,7 @@ ShoppingSystem::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+   root to: "sessions#new"
 
   # See how all your routes lay out with "rake routes"
 

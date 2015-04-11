@@ -6,6 +6,8 @@ class ProductsController < ApplicationController
     @order_item = current_order.order_items.new
   end
   
+  
+  
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
