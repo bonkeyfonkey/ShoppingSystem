@@ -1,9 +1,16 @@
 ShoppingSystem::Application.routes.draw do
 
+  resources :admins
+
+
+  post '/rate' => 'rater#create', :as => 'rate'
+
   get "pages/adminhome"
 
   resources :comments
-
+ 
+ 
+    get "admin/new"
 
   get "sessions/new"
 

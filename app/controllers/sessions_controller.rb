@@ -4,12 +4,19 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_name(params[:name]) 
-    
-      session[:user_id] = 'User'
+    if user.present?
+      session[:user_type] = 'User'
       redirect_to '/products'
-    
-    end
-	
+    else
+      admin = Admin.find_by_name(params[:name])
+      if admin.present? 
+        session[:user_type] = 'Admin'
+        redirect_to '/pages/adminhome'
+		
+		end
+		end
+		end
+		
 	
 	
 		
